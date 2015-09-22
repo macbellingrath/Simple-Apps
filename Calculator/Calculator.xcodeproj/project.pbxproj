@@ -83,6 +83,7 @@
 		E6CEF8511BB1DAFF007776E8 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		E6CEF8521BB1DAFF007776E8 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		E6CEF8531BB1DAFF007776E8 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E6D8B7621BB2074900462C45 /* CalculatorPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatorPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 				E63CAEC41BB04687009F8192 /* ViewController.swift */,
 				E6CEF8311BB19FCD007776E8 /* CalculatorBrain.swift */,
 				E63CAEC61BB04687009F8192 /* Main.storyboard */,
+				E6D8B7621BB2074900462C45 /* CalculatorPlayground.playground */,
 				E63CAEC91BB04687009F8192 /* Assets.xcassets */,
 				E63CAECB1BB04687009F8192 /* LaunchScreen.storyboard */,
 				E63CAECE1BB04687009F8192 /* Info.plist */,

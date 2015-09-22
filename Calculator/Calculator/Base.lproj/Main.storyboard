@@ -8,7 +8,6 @@
         <!--View Controller-->
         <scene sceneID="RGK-9h-FiP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aZL-pa-Qv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rFa-4h-Vx0" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aE6-QV-eYJ"/>
@@ -212,13 +211,6 @@
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="Ease In"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clear" destination="rFa-4h-Vx0" eventType="touchUpInside" id="qqT-Ql-9x3"/>
                                 </connections>
@@ -273,14 +265,16 @@
                                 <state key="normal" title=".">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="decimalButtonPressed:" destination="rFa-4h-Vx0" eventType="touchUpInside" id="Y5j-Xd-cdO"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reT-L1-RJ3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lg5-UB-DPY" customClass="SpringLabel" customModule="Calculator" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="Lg5-UB-DPY" customClass="SpringLabel" customModule="Calculator" customModuleProvider="target">
                                         <rect key="frame" x="8" y="19" width="346.5" height="158.5"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="92"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -292,13 +286,24 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeIn"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="HFy-lG-uoD">
+                                        <rect key="frame" x="8" y="138" width="20" height="39"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="HFy-lG-uoD" firstAttribute="top" secondItem="reT-L1-RJ3" secondAttribute="top" constant="138" id="3a7-lO-tFV"/>
                                     <constraint firstAttribute="trailing" secondItem="Lg5-UB-DPY" secondAttribute="trailing" constant="20.5" id="6kn-0f-xdE"/>
                                     <constraint firstItem="Lg5-UB-DPY" firstAttribute="leading" secondItem="reT-L1-RJ3" secondAttribute="leading" constant="8" id="7Pe-CE-ycD"/>
+                                    <constraint firstItem="HFy-lG-uoD" firstAttribute="leading" secondItem="reT-L1-RJ3" secondAttribute="leading" constant="8" id="KNC-BN-WZN"/>
                                     <constraint firstAttribute="bottom" secondItem="Lg5-UB-DPY" secondAttribute="bottom" constant="20.5" id="Sgg-oQ-gBa"/>
+                                    <constraint firstAttribute="bottom" secondItem="HFy-lG-uoD" secondAttribute="bottom" constant="21" id="Vka-h5-b80"/>
+                                    <constraint firstAttribute="trailing" secondItem="HFy-lG-uoD" secondAttribute="trailing" constant="347" id="dLc-KS-XMh"/>
                                     <constraint firstItem="Lg5-UB-DPY" firstAttribute="top" secondItem="reT-L1-RJ3" secondAttribute="top" constant="19" id="oAX-om-b4o"/>
                                 </constraints>
                             </view>
@@ -425,9 +430,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="currentOperationLabel" destination="HFy-lG-uoD" id="lLi-aa-Jbw"/>
                         <outlet property="displayLabel" destination="Lg5-UB-DPY" id="4uC-hI-pZO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZL-pa-Qv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="994.5" y="-40.5"/>
         </scene>
