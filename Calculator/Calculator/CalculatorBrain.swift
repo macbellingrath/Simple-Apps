@@ -89,6 +89,7 @@ class Calculator {
     func performOperation(symbol: String) -> Double? {
         if let operation = knownOps[symbol] {
             opStack.append(operation)
+            
         }
         return evaluate()
     }
@@ -101,33 +102,3 @@ class Calculator {
     
 
 
-func calculateNumbers(x: Double,  y: Double, operation: OperationType)  -> Double {
-    
-    switch operation {
-        
-    case .Addition:
-        return x + y
-        
-    case .Subtraction:
-        return x - y
-    case .Multiplication:
-        return x * y
-    case .Division:
-        return x / y
-    case .Modulo:
-        return x % y
-    }
-    
-    
-
-}
-
-
-
-enum OperationType: String {
-    case Addition = "+"
-    case Subtraction = "-"
-    case Multiplication = "X"
-    case Division = "/"
-    case Modulo = "%"
-}

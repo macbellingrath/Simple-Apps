@@ -16,6 +16,7 @@ class CalculatorViewController: UIViewController {
     var calculator = Calculator()
     
     @IBOutlet weak var display: SpringLabel!
+    @IBOutlet weak var currentOperationLabel: UILabel!
     
 
     @IBAction func appendDigit(button: UIButton) {

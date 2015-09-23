@@ -427,6 +427,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="currentOperationLabel" destination="HFy-lG-uoD" id="Rc0-9G-eB0"/>
                         <outlet property="display" destination="Lg5-UB-DPY" id="UPa-Ni-rbd"/>
                     </connections>
                 </viewController>
