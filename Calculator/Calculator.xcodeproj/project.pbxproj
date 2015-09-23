@@ -42,6 +42,7 @@
 		E6CEF86E1BB1DAFF007776E8 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEF8511BB1DAFF007776E8 /* TransitionManager.swift */; };
 		E6CEF86F1BB1DAFF007776E8 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEF8521BB1DAFF007776E8 /* TransitionZoom.swift */; };
 		E6CEF8701BB1DAFF007776E8 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEF8531BB1DAFF007776E8 /* UnwindSegue.swift */; };
+		E6D8B7641BB2E00F00462C45 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8B7631BB2E00F00462C45 /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		E6CEF8521BB1DAFF007776E8 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		E6CEF8531BB1DAFF007776E8 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		E6D8B7621BB2074900462C45 /* CalculatorPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatorPlayground.playground; sourceTree = "<group>"; };
+		E6D8B7631BB2E00F00462C45 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				E63CAEC21BB04687009F8192 /* AppDelegate.swift */,
 				E63CAEC41BB04687009F8192 /* ViewController.swift */,
 				E6CEF8311BB19FCD007776E8 /* CalculatorBrain.swift */,
+				E6D8B7631BB2E00F00462C45 /* CalculatorViewController.swift */,
 				E63CAEC61BB04687009F8192 /* Main.storyboard */,
 				E6D8B7621BB2074900462C45 /* CalculatorPlayground.playground */,
 				E63CAEC91BB04687009F8192 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				E6CEF85C1BB1DAFF007776E8 /* DesignableTextField.swift in Sources */,
 				E6CEF8621BB1DAFF007776E8 /* LoadingView.swift in Sources */,
 				E6CEF8661BB1DAFF007776E8 /* Spring.swift in Sources */,
+				E6D8B7641BB2E00F00462C45 /* CalculatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
