@@ -117,5 +117,14 @@ kelly.favoriteColor = .Magenta
 kelly.favColorAsUIColor
 
 
+class Person {
+    
+    var name: String!
+    
+    func setName(name: String) {
+        self.name = name
+    }
+}
+
 
 
