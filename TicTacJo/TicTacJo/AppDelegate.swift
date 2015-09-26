@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  StoryboardLess
+//  TicTacJo
 //
 //  Created by Mac Bellingrath on 9/24/15.
 //  Copyright © 2015 Mac Bellingrath. All rights reserved.
@@ -16,19 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let navController = UINavigationController()
-        
-   
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        window?.backgroundColor = UIColor.magentaColor()
-        
-        window?.makeKeyAndVisible()
-        
-        window?.rootViewController = ViewController()
-        
-        window?.rootViewController?.navigationController = 
         
         
         return true
