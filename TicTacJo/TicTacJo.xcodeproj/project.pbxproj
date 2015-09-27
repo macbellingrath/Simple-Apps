@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E63125291BB5865A006FB435 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63125281BB5865A006FB435 /* Board.swift */; };
 		E631252B1BB592BD006FB435 /* TicTacToeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631252A1BB592BD006FB435 /* TicTacToeViewController.swift */; };
-		E6AF61F21BB4AB5B0086A563 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF61F11BB4AB5B0086A563 /* GameViewController.swift */; };
+		E65CDA481BB8235A0045731F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDA471BB8235A0045731F /* UIImageExtension.swift */; };
+		E6A6CA441BB6E2390031A3EE /* TTTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6CA431BB6E2390031A3EE /* TTTButton.swift */; };
 		E6B518571BB49CA300D4F9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B518561BB49CA300D4F9AF /* AppDelegate.swift */; };
 		E6B5185C1BB49CA300D4F9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5185A1BB49CA300D4F9AF /* Main.storyboard */; };
 		E6B5185E1BB49CA300D4F9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B5185D1BB49CA300D4F9AF /* Assets.xcassets */; };
@@ -18,9 +18,9 @@
 
 /* Begin PBXFileReference section */
 		E63125271BB580B3006FB435 /* GamePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GamePlayground.playground; sourceTree = "<group>"; };
-		E63125281BB5865A006FB435 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		E631252A1BB592BD006FB435 /* TicTacToeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacToeViewController.swift; sourceTree = "<group>"; };
-		E6AF61F11BB4AB5B0086A563 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E65CDA471BB8235A0045731F /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E6A6CA431BB6E2390031A3EE /* TTTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTButton.swift; sourceTree = "<group>"; };
 		E6B518531BB49CA300D4F9AF /* TicTacJo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacJo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B518561BB49CA300D4F9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6B5185B1BB49CA300D4F9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,7 +45,6 @@
 			children = (
 				E6B518551BB49CA300D4F9AF /* TicTacJo */,
 				E6B518541BB49CA300D4F9AF /* Products */,
-				E6AF61F11BB4AB5B0086A563 /* GameViewController.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +61,8 @@
 			children = (
 				E6B518561BB49CA300D4F9AF /* AppDelegate.swift */,
 				E631252A1BB592BD006FB435 /* TicTacToeViewController.swift */,
-				E63125281BB5865A006FB435 /* Board.swift */,
+				E6A6CA431BB6E2390031A3EE /* TTTButton.swift */,
+				E65CDA471BB8235A0045731F /* UIImageExtension.swift */,
 				E63125271BB580B3006FB435 /* GamePlayground.playground */,
 				E6B5185A1BB49CA300D4F9AF /* Main.storyboard */,
 				E6B5185D1BB49CA300D4F9AF /* Assets.xcassets */,
@@ -142,9 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6AF61F21BB4AB5B0086A563 /* GameViewController.swift in Sources */,
 				E631252B1BB592BD006FB435 /* TicTacToeViewController.swift in Sources */,
-				E63125291BB5865A006FB435 /* Board.swift in Sources */,
+				E6A6CA441BB6E2390031A3EE /* TTTButton.swift in Sources */,
+				E65CDA481BB8235A0045731F /* UIImageExtension.swift in Sources */,
 				E6B518571BB49CA300D4F9AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
