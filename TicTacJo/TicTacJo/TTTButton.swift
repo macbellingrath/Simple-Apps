@@ -23,8 +23,8 @@ class TTTButton: UIButton {
             
             switch playerNum {
                 
-            case 1: self.setImage(UIImage(assetIdentifier: .Jo), forState: .Normal)
-            case 2: self.setImage(UIImage(assetIdentifier: .Swifty), forState: .Normal)
+            case 1:  putSymbol("X")
+            case 2: putSymbol("O")
             default: break
                 
             }
@@ -41,6 +41,12 @@ class TTTButton: UIButton {
         self.contentMode = UIViewContentMode.ScaleAspectFill
     }
     
+    func putSymbol(symbol: String) {
+        self.setAttributedTitle(makeAtrString(symbol), forState: .Normal)
+        self.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    }
+    
+   
 
     
 }

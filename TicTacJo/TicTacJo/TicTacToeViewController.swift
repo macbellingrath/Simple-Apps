@@ -10,19 +10,30 @@ import UIKit
 
 class TicTacToeViewController: UIViewController {
     
+   
+    var winner: Int! {
+        didSet {
+            playButton.setAttributedTitle(makeAtrString("Play"), forState: .Normal)
+            playButton.titleLabel?.textColor = UIColor.blackColor()
+        }
+    }
     
-    var winner: Int!
+    var tie: Bool  {
+        get {
+            return FieldFull()
+        }
+    }
     var isFirstGame = true
     var inTheMiddleOfAGame = false {
         didSet{
             
-            inTheMiddleOfAGame ? (playButton.hidden = true) : (playButton.hidden = false)
+            inTheMiddleOfAGame ? playButton.setAttributedTitle(makeAtrString("End"), forState: .Normal) :  (playButton.setAttributedTitle(makeAtrString("Play"), forState: .Normal))
 
         }
     }
-    var isPlayer1Turn = true  {
+    var isPlayer1Turn = false  {
         didSet {
-            topView.backgroundColor = isPlayer1Turn ? UIColor.orangeColor() : UIColor.purpleColor()
+            topView.backgroundColor = isPlayer1Turn ? UIColor.darkGrayColor() : UIColor.lightGrayColor()
             gameStatusLabel.attributedText = makeAtrString(current)
         }
     }
@@ -69,14 +80,9 @@ class TicTacToeViewController: UIViewController {
     let screenHeight = Int(UIScreen.mainScreen().bounds.height)
     let screenWidth = Int(UIScreen.mainScreen().bounds.width)
     
-    
-    
-    
-   
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        view.backgroundColor = UIColor.blackColor()
+        view.backgroundColor = UIColor.whiteColor()
       
         
     }
@@ -90,20 +96,12 @@ class TicTacToeViewController: UIViewController {
         }
         
         drawScoreButtons()
-        
-        
-    
-        
+       
     
         //TopView
-        topView.backgroundColor = UIColor.orangeColor()
+        topView.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(topView)
-       
-        
-        
-        
-      
-        
+     
         //Status Label
         gameStatusLabel.attributedText = makeAtrString(current)
         gameStatusLabel.textAlignment = .Center
@@ -112,43 +110,29 @@ class TicTacToeViewController: UIViewController {
         
         topView.addSubview(gameStatusLabel)
         
-        //Score Labels
-        gameScoreLabel.text = "P1 Score: \(p1Score) // P2 Score: \(p2Score)"
-        gameScoreLabel.textAlignment = .Center
-        gameScoreLabel.center.x = view.center.x
-        view.addSubview(gameScoreLabel)
- 
+         
 
         //Draw Gameboard buttons
         drawButtons()
-        
-        
        
-        
-
-        
-       
-     
-     
-        
     }
     
     func drawScoreButtons() {
         p1ScoreLabel.center = CGPoint(x: midX - 100, y: 130)
         p1ScoreLabel.layer.borderWidth  = 3
-        p1ScoreLabel.layer.borderColor = UIColor.orangeColor().CGColor
-        p1ScoreLabel.setTitle("\(p1Score)", forState: .Normal )
+        p1ScoreLabel.layer.borderColor = UIColor.darkGrayColor().CGColor
+        p1ScoreLabel.setAttributedTitle(makeAtrString("\(p1Score)"), forState: .Normal)
         p1ScoreLabel.backgroundColor  = UIColor.clearColor()
-        p1ScoreLabel.setTitleColor(UIColor.orangeColor(), forState: .Normal)
+        p1ScoreLabel.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
         p1ScoreLabel.layer.cornerRadius = p1ScoreLabel.frame.height / 2
         view.addSubview(p1ScoreLabel)
         
         p2ScoreLabel.center = CGPoint(x: midX, y: 130)
         p2ScoreLabel.layer.borderWidth  = 3
-        p2ScoreLabel.layer.borderColor = UIColor.purpleColor().CGColor
-        p2ScoreLabel.setTitle("\(p2Score)", forState: .Normal )
+        p2ScoreLabel.layer.borderColor = UIColor.lightGrayColor().CGColor
+        p2ScoreLabel.setAttributedTitle(makeAtrString("\(p2Score)"), forState: .Normal)
         p2ScoreLabel.backgroundColor  = UIColor.clearColor()
-        p2ScoreLabel.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        p2ScoreLabel.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         p2ScoreLabel.layer.cornerRadius = p2ScoreLabel.frame.height / 2
         view.addSubview(p2ScoreLabel)
        
@@ -156,15 +140,15 @@ class TicTacToeViewController: UIViewController {
     }
     
     func playButtonPressed() {
-        startGame()
-        print("playbuttonpressed")
-    }
-
-    func startGame() {
+        playButton.setTitle("End", forState: .Normal)
         isPlayer1Turn = true
-        playButton.hidden = true
-        inTheMiddleOfAGame = true
         
+        inTheMiddleOfAGame = true
+        if inTheMiddleOfAGame {
+            restartGame()
+        } else {
+            reset()
+        }
     }
 
     //Determine a Tie
@@ -200,7 +184,7 @@ class TicTacToeViewController: UIViewController {
                 
                 let button = TTTButton(frame: CGRect(x: x, y: y, width: 100, height: 100))
                 button.backgroundColor = UIColor.clearColor()
-                button.layer.borderColor = UIColor.whiteColor().CGColor
+                button.layer.borderColor = UIColor.blackColor().CGColor
                 button.layer.borderWidth = 2
                 button.layer.cornerRadius = 50
                 
@@ -219,14 +203,18 @@ class TicTacToeViewController: UIViewController {
         //Reset Button
         resetButton = TTTButton(frame: CGRect(x: 300, y: 13, width: 50, height: 50))
         resetButton.center = CGPoint(x: 310, y: 130)
-        resetButton.setTitle("X", forState: .Normal)
+        resetButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        resetButton.setAttributedTitle(makeAtrString("X"), forState: .Normal)
+        
         resetButton.addTarget(self, action: "reset", forControlEvents: .TouchUpInside)
-        resetButton.backgroundColor = UIColor.redColor()
-        resetButton.titleLabel?.textColor = UIColor.whiteColor()
+        resetButton.backgroundColor = UIColor.clearColor()
+        resetButton.layer.borderColor = UIColor.redColor().CGColor
+        resetButton.layer.borderWidth = 3
+        
         resetButton.layer.cornerRadius = resetButton.frame.width / 2
         view.addSubview(resetButton)
         
-        if inTheMiddleOfAGame == false {
+        
             //Play Button
             playButton = TTTButton(frame: CGRect(x: 0, y: 600, width: 90, height: 90))
             playButton.center = CGPoint(x: midX, y: 630)
@@ -235,27 +223,30 @@ class TicTacToeViewController: UIViewController {
             playButton.addTarget(self, action: "playButtonPressed", forControlEvents: .TouchUpInside)
             playButton.backgroundColor = UIColor.clearColor()
             playButton.layer.borderWidth = 3
-            playButton.layer.borderColor = UIColor.whiteColor().CGColor
-            playButton.titleLabel?.textColor = UIColor.whiteColor()
+            playButton.layer.borderColor = UIColor.blackColor().CGColor
+            playButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+       
             view.addSubview(playButton)
             
-        }
+        
         
 
         
-    }
-    func makeAtrString(string: String) -> NSMutableAttributedString {
-        let atrString = NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 30.0)!])
-        
-        return atrString
     }
     
     
     //Called when a player presses one of the spaces on the board
         func spacePressed(button: TTTButton) {
+          
+            if FieldFull() {
+                return
+            }
             
+            if winner != nil {
+                return
+            }
 
-            inTheMiddleOfAGame = true
+            if inTheMiddleOfAGame == true {
             
             
                 if button.playerNum == 0 {
@@ -264,7 +255,6 @@ class TicTacToeViewController: UIViewController {
                     
                     grid[button.row][button.col] = isPlayer1Turn ? 1:2
                     
-                    isPlayer1Turn = !isPlayer1Turn
                     
                    
                     
@@ -273,25 +263,26 @@ class TicTacToeViewController: UIViewController {
                         
                         gameStatusLabel.attributedText = makeAtrString(current)
                         
-                        button.setImage(UIImage(assetIdentifier: .Jo), forState: .Normal)
+                        button.putSymbol("X")
+                        
                     
                         
                     } else if !isPlayer1Turn {
                         
                         gameStatusLabel.attributedText = makeAtrString(current)
-                        button.setImage(UIImage(assetIdentifier: .Swifty), forState: .Normal)
+                        button.putSymbol("O")
                         
                     }
+                    isPlayer1Turn = !isPlayer1Turn
                     
                     checkForWinner()
                 }
+            }
     }
     
     //A check to see if the current game has a winner. This is called every time that an empty space on the board is filled by a player.
         func checkForWinner() {
-                
-                
-            
+
                 let posibilities = [
                     
                     ((0,0),(0,1),(0,2)),
@@ -326,48 +317,20 @@ class TicTacToeViewController: UIViewController {
                             }
                             
                             if winner != nil {
-                                alert(.Winner)
+                                gameStatusLabel.attributedText = makeAtrString("Winner: \(winner)")
                                 
                             }
                           
                         }
-                    } else if FieldFull() {
-                        alert(.Tie)
-                        
+                    } else if tie {
+                        gameStatusLabel.text = "Tie"
+                        playButton.setAttributedTitle(makeAtrString("Play"), forState: .Normal)
                     }
                 }
-    }
-    enum alertType: String {
-        case Winner, Tie
-    
+
     }
     
-    func alert(type: alertType) {
-
-        var message = ""
-        switch type {
-        case .Winner: message = "The Winner is player \(winner)"
-        case .Tie: message = "We have a tie"
-            
-        }
-        
-        let ac = UIAlertController(title: type.rawValue, message: message, preferredStyle: .Alert)
-        
-        
-        ac.addAction(UIAlertAction(title: "Play Again", style: .Default, handler: { (alert) -> Void in
-            
-            self.restartGame()
-            
-            
-        }))
-        
-        presentViewController(ac, animated: true, completion: nil)
-        
-
-        
-    }
-
-  
+    
     func restartGame(){
         
         
@@ -383,12 +346,14 @@ class TicTacToeViewController: UIViewController {
         drawButtons()
         isPlayer1Turn = true
         inTheMiddleOfAGame = false
+        winner = nil
         
         
         
     }
     
     func reset() {
+        
         isFirstGame = true
         restartGame()
         grid = [[0,0,0],[0,0,0],[0,0,0]]
@@ -398,5 +363,22 @@ class TicTacToeViewController: UIViewController {
         inTheMiddleOfAGame = false
         
     }
+}
+
+extension TicTacToeViewController {
+    class func makeAtrString(string: String) -> NSMutableAttributedString {
+        let atrString = NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 30.0)!])
+        
+        return atrString
+    }
+
+}
+extension TTTButton {
+    static func makeAtrString(string: String) -> NSMutableAttributedString {
+        let atrString = NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 30.0)!])
+        
+        return atrString
+    }
+
 }
 
