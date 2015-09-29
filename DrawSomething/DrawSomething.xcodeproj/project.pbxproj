@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E69DFBD91BBB30DA002FE787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DFBD81BBB30DA002FE787 /* AppDelegate.swift */; };
+		E69DFBDB1BBB30DA002FE787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DFBDA1BBB30DA002FE787 /* ViewController.swift */; };
+		E69DFBDE1BBB30DA002FE787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69DFBDC1BBB30DA002FE787 /* Main.storyboard */; };
+		E69DFBE01BBB30DA002FE787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69DFBDF1BBB30DA002FE787 /* Assets.xcassets */; };
+		E69DFBE31BBB30DA002FE787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69DFBE11BBB30DA002FE787 /* LaunchScreen.storyboard */; };
+		E69DFBEB1BBB30E6002FE787 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DFBEA1BBB30E6002FE787 /* DrawView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E69DFBD51BBB30DA002FE787 /* DrawSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69DFBD81BBB30DA002FE787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E69DFBDA1BBB30DA002FE787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E69DFBDD1BBB30DA002FE787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E69DFBDF1BBB30DA002FE787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E69DFBE21BBB30DA002FE787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E69DFBE41BBB30DA002FE787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69DFBEA1BBB30E6002FE787 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawView.swift; path = ../DrawView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E69DFBD21BBB30DA002FE787 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E69DFBCC1BBB30DA002FE787 = {
+			isa = PBXGroup;
+			children = (
+				E69DFBD71BBB30DA002FE787 /* DrawSomething */,
+				E69DFBD61BBB30DA002FE787 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E69DFBD61BBB30DA002FE787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E69DFBD51BBB30DA002FE787 /* DrawSomething.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E69DFBD71BBB30DA002FE787 /* DrawSomething */ = {
+			isa = PBXGroup;
+			children = (
+				E69DFBD81BBB30DA002FE787 /* AppDelegate.swift */,
+				E69DFBEA1BBB30E6002FE787 /* DrawView.swift */,
+				E69DFBDA1BBB30DA002FE787 /* ViewController.swift */,
+				E69DFBDC1BBB30DA002FE787 /* Main.storyboard */,
+				E69DFBDF1BBB30DA002FE787 /* Assets.xcassets */,
+				E69DFBE11BBB30DA002FE787 /* LaunchScreen.storyboard */,
+				E69DFBE41BBB30DA002FE787 /* Info.plist */,
+			);
+			path = DrawSomething;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E69DFBD41BBB30DA002FE787 /* DrawSomething */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E69DFBE71BBB30DA002FE787 /* Build configuration list for PBXNativeTarget "DrawSomething" */;
+			buildPhases = (
+				E69DFBD11BBB30DA002FE787 /* Sources */,
+				E69DFBD21BBB30DA002FE787 /* Frameworks */,
+				E69DFBD31BBB30DA002FE787 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrawSomething;
+			productName = DrawSomething;
+			productReference = E69DFBD51BBB30DA002FE787 /* DrawSomething.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E69DFBCD1BBB30DA002FE787 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Mac Bellingrath";
+				TargetAttributes = {
+					E69DFBD41BBB30DA002FE787 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = E69DFBD01BBB30DA002FE787 /* Build configuration list for PBXProject "DrawSomething" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E69DFBCC1BBB30DA002FE787;
+			productRefGroup = E69DFBD61BBB30DA002FE787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E69DFBD41BBB30DA002FE787 /* DrawSomething */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E69DFBD31BBB30DA002FE787 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DFBE31BBB30DA002FE787 /* LaunchScreen.storyboard in Resources */,
+				E69DFBE01BBB30DA002FE787 /* Assets.xcassets in Resources */,
+				E69DFBDE1BBB30DA002FE787 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E69DFBD11BBB30DA002FE787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DFBDB1BBB30DA002FE787 /* ViewController.swift in Sources */,
+				E69DFBD91BBB30DA002FE787 /* AppDelegate.swift in Sources */,
+				E69DFBEB1BBB30E6002FE787 /* DrawView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E69DFBDC1BBB30DA002FE787 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E69DFBDD1BBB30DA002FE787 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E69DFBE11BBB30DA002FE787 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E69DFBE21BBB30DA002FE787 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E69DFBE51BBB30DA002FE787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E69DFBE61BBB30DA002FE787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E69DFBE81BBB30DA002FE787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DrawSomething/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.DrawSomething;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E69DFBE91BBB30DA002FE787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DrawSomething/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.DrawSomething;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E69DFBD01BBB30DA002FE787 /* Build configuration list for PBXProject "DrawSomething" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69DFBE51BBB30DA002FE787 /* Debug */,
+				E69DFBE61BBB30DA002FE787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E69DFBE71BBB30DA002FE787 /* Build configuration list for PBXNativeTarget "DrawSomething" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69DFBE81BBB30DA002FE787 /* Debug */,
+				E69DFBE91BBB30DA002FE787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E69DFBCD1BBB30DA002FE787 /* Project object */;
+}
