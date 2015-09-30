@@ -54,10 +54,11 @@ class ViewController: UIViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        for _ in touches {
+        
         
             if let touch = touches.first {
-                
+               
+                //Line
 //                let newLine = Line()
 //                
 //                newLine.start = touch.locationInView(view)
@@ -66,16 +67,42 @@ class ViewController: UIViewController {
 //                
 //                (view as? DrawView)?.lines.append(newLine)
                 
-                let newScribble = Scribble()
+                //Scribble
                 
-                newScribble.points.append(touch.locationInView(view))
+//                let newScribble = Scribble()
+//                
+//                newScribble.points.append(touch.locationInView(view))
+//                
+//                newScribble.strokeWidth = 10
+//                newScribble.strokeColor = UIColor.blackColor()
+//                
+//                (view as? DrawView)?.lines.append(newScribble)
                 
-                newScribble.strokeWidth = 10
-                newScribble.strokeColor = UIColor.blackColor()
+                ///// Shape
                 
-                (view as? DrawView)?.lines.append(newScribble)
                 
-            }
+                if let currentShape = (view as? DrawView)?.lines.last {
+                    currentShape.end = touch.locationInView(view)
+                }
+                
+                let shape = Shape(type: .Circle)
+                
+                
+                shape.start = touch.locationInView(view)
+                
+                
+          
+                
+                shape.fillColor = UIColor.blackColor()
+                (view as? DrawView)?.lines.append(shape)
+                
+          
+                
+                
+                
+                view.setNeedsDisplay()
+                
+            
         }
     }
     

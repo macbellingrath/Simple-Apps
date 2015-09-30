@@ -65,6 +65,38 @@ class DrawView: UIView {
                 if let fillColor = line.fillColor {
                     fillColor.set()
                     
+                    if let shape = line as? Shape {
+                        
+                        
+                        
+                        let width = end.x - start.x
+                        let height = end.y - start.y
+                        
+                        let rect = CGRect(x: start.x, y: start.y, width: width, height: height)
+                        
+                        
+                        switch shape.type ?? .Rectangle {
+                            
+                        case .Circle:
+                            CGContextFillEllipseInRect(context, rect)
+                        case .Triangle:
+                            let top = CGPoint(x: width/2 + start.x, y: start .y)
+                            let right = end
+                            let left = CGPoint(x: start.x, y: end.y)
+                            
+                            CGContextMoveToPoint(context, top.x, top.y)
+                            CGContextAddLineToPoint(context, right.x, right.y)
+                            CGContextAddLineToPoint(context, left.x, left.y)
+                            
+                            CGContextFillPath(context)
+                            
+                        case .Rectangle:
+                            
+                            CGContextFillRect(context, rect)
+                            
+                        }
+                    }
+                    
                 }
                 if let strokeColor = line.strokeColor {
                     
@@ -82,6 +114,7 @@ class DrawView: UIView {
                     // if line is a scribble
                     
                     if line is Scribble {
+                        
                         
                     }
                     
@@ -224,4 +257,21 @@ class Scribble: Line {
             
         }
     }
+}
+
+
+enum ShapeType {
+    case Rectangle, Circle, Triangle
+
+}
+
+class Shape: Line {
+    var type: ShapeType!
+    
+    
+    init(type: ShapeType) {
+        
+        self.type = type
+    }
+    
 }
