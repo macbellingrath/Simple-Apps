@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E63BED251BBC1FEB00993F4F /* DrawingPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = DrawingPlayground.playground; path = DrawSomething/DrawingPlayground.playground; sourceTree = "<group>"; };
 		E69DFBD51BBB30DA002FE787 /* DrawSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69DFBD81BBB30DA002FE787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E69DFBDA1BBB30DA002FE787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 			children = (
 				E69DFBD71BBB30DA002FE787 /* DrawSomething */,
 				E69DFBD61BBB30DA002FE787 /* Products */,
+				E63BED251BBC1FEB00993F4F /* DrawingPlayground.playground */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,6 +289,7 @@
 				E69DFBE91BBB30DA002FE787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

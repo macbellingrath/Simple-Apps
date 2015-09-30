@@ -35,9 +35,6 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    @IBOutlet weak var shapeView: DrawView!
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +50,55 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        for _ in touches {
+        
+            if let touch = touches.first {
+                
+//                let newLine = Line()
+//                
+//                newLine.start = touch.locationInView(view)
+//                newLine.strokeColor = UIColor.blackColor()
+//                newLine.strokeWidth = 10
+//                
+//                (view as? DrawView)?.lines.append(newLine)
+                
+                let newScribble = Scribble()
+                
+                newScribble.points.append(touch.locationInView(view))
+                
+                newScribble.strokeWidth = 10
+                newScribble.strokeColor = UIColor.blackColor()
+                
+                (view as? DrawView)?.lines.append(newScribble)
+                
+            }
+        }
+    }
+    
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+      
+        if let touch = touches.first {
+            
+            let currentline = (view as? DrawView)?.lines.last
+
+            currentline?.end = touch.locationInView(view)
+            view.setNeedsDisplay()
+            
+            
+            if let currentScribble = (view as? DrawView)?.lines.last as? Scribble {
+                currentScribble.points.append(touch.locationInView(view))
+                view.setNeedsDisplay()
+                
+            }
+            
+        }
+    }
+    
 
 
 
