@@ -11,43 +11,49 @@ import UIKit
 class DrawView: UIView {
     
 
-   class func drawCircle() {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 512, height: 512), false, 0)
-        
-        let context = UIGraphicsGetCurrentContext()
-        let rectangle = CGRect(x: 5, y: 5, width: 502, height: 502)
-        CGContextSetFillColorWithColor(context, UIColor.blueColor().CGColor)
-        CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
-        CGContextSetLineWidth(context, 10)
-        
-        CGContextAddEllipseInRect(context, rectangle)
-        CGContextDrawPath(context, .FillStroke)
-        
-        
-//        let img = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
     
-        
+
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch in touches {
+            print(touch.locationInView(self))
+        }
     }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
-        UIGraphicsBeginImageContext(self.frame.size )
-        let context = UIGraphicsGetCurrentContext()
-        let rectangle = CGRect(x: 5, y: 5, width: 502, height: 502)
-        CGContextSetFillColorWithColor(context, UIColor.blueColor().CGColor)
-        CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
-        CGContextSetLineWidth(context, 10)
         
-        CGContextAddEllipseInRect(context, rectangle)
-        CGContextDrawPath(context, .FillStroke)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-    
+        let context = UIGraphicsGetCurrentContext()
+       
+        
+        //oval
+        let path = UIBezierPath(ovalInRect: rect)
+        UIColor.blueColor().setFill()
+        path.fill()
+        
+        
+        //square
+        let squarePath = UIBezierPath(rect: rect)
+        UIColor.redColor().setStroke()
+        CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
+        CGContextSetLineWidth(context, 10)
+        squarePath.stroke()
+        
+        
+        //triangle
+        
+        CGContextSetFillColorWithColor(context, UIColor.greenColor().CGColor)
+        CGContextBeginPath(context)
+        CGContextMoveToPoint(context, 80, 200)
+ 
+        
+        CGContextAddLineToPoint(context, 20, 300)
+        
+        CGContextAddLineToPoint(context, 140, 300)
+        
+        CGContextClosePath(context)
+        CGContextDrawPath(context, .EOFillStroke)
         
     }
     

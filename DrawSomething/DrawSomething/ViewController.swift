@@ -35,12 +35,14 @@ import UIKit
 class ViewController: UIViewController {
 
 
+    @IBOutlet weak var shapeView: DrawView!
 
- 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   drawCircle()
+
         
         
       
@@ -50,26 +52,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func drawCircle() {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 512, height: 512), false, 0)
-        
-        let context = UIGraphicsGetCurrentContext()
-        let rectangle = CGRect(x: 5, y: 5, width: 502, height: 502)
-        CGContextSetFillColorWithColor(context, UIColor.blueColor().CGColor)
-//        CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
-        CGContextSetLineWidth(context, 10)
-        CGContextAddEllipseInRect(context, rectangle)
-        CGContextDrawPath(context, .FillStroke)
-        
-        
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        
-
-        
     }
 
 
