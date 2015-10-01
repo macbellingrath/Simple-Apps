@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  DrawSomething
+//  CustomSlider
 //
-//  Created by Mac Bellingrath on 9/29/15.
+//  Created by Mac Bellingrath on 10/1/15.
 //  Copyright © 2015 Mac Bellingrath. All rights reserved.
 //
 
