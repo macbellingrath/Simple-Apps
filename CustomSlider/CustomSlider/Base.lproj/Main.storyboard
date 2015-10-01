@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,19 +17,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eqc-93-Way" customClass="SimpleSlider" customModule="CustomSlider" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="62"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUw-kj-2WO">
+                                <rect key="frame" x="20" y="50" width="560" height="85"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-5S-lLM" customClass="SimpleSlider" customModule="CustomSlider" customModuleProvider="target">
+                                        <rect key="frame" x="237" y="8" width="72" height="69"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="M20-b5-xW6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHq-V7-qlc" customClass="SimpleSlider" customModule="CustomSlider" customModuleProvider="target">
+                                        <rect key="frame" x="309" y="8" width="72" height="69"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="yAr-X1-Zad"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du9-3N-ZdB" customClass="SimpleSlider" customModule="CustomSlider" customModuleProvider="target">
+                                        <rect key="frame" x="382" y="8" width="72" height="69"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="uUo-nS-vOT"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.99607843139999996" green="0.76078431369999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WV-2E-5PP" customClass="SimpleSlider" customModule="CustomSlider" customModuleProvider="target">
+                                        <rect key="frame" x="456" y="8" width="72" height="69"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="gbB-yp-BTx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="du9-3N-ZdB" firstAttribute="top" secondItem="YHq-V7-qlc" secondAttribute="top" id="0DT-UJ-9vG"/>
+                                    <constraint firstItem="5WV-2E-5PP" firstAttribute="bottom" secondItem="CUw-kj-2WO" secondAttribute="bottomMargin" id="74D-dY-1QK"/>
+                                    <constraint firstItem="NNg-5S-lLM" firstAttribute="leading" secondItem="CUw-kj-2WO" secondAttribute="leading" constant="237" id="7bZ-Cd-sNq"/>
+                                    <constraint firstItem="du9-3N-ZdB" firstAttribute="leading" secondItem="YHq-V7-qlc" secondAttribute="trailing" constant="1" id="CAR-rD-IoE"/>
+                                    <constraint firstItem="5WV-2E-5PP" firstAttribute="leading" secondItem="du9-3N-ZdB" secondAttribute="trailing" constant="2" id="NTq-eH-ZUR"/>
+                                    <constraint firstItem="NNg-5S-lLM" firstAttribute="top" secondItem="YHq-V7-qlc" secondAttribute="top" id="Sw0-Tu-Hm9"/>
+                                    <constraint firstItem="NNg-5S-lLM" firstAttribute="centerY" secondItem="CUw-kj-2WO" secondAttribute="centerY" id="XSI-Fn-BUb"/>
+                                    <constraint firstItem="NNg-5S-lLM" firstAttribute="top" secondItem="CUw-kj-2WO" secondAttribute="topMargin" id="a9c-Yh-NCX"/>
+                                    <constraint firstAttribute="trailing" secondItem="5WV-2E-5PP" secondAttribute="trailing" constant="32" id="cAk-ap-e1w"/>
+                                    <constraint firstItem="YHq-V7-qlc" firstAttribute="leading" secondItem="NNg-5S-lLM" secondAttribute="trailing" id="h7f-dE-8pa"/>
+                                    <constraint firstItem="du9-3N-ZdB" firstAttribute="top" secondItem="5WV-2E-5PP" secondAttribute="top" id="nEQ-CY-NGf"/>
+                                    <constraint firstItem="5WV-2E-5PP" firstAttribute="bottom" secondItem="du9-3N-ZdB" secondAttribute="bottom" id="pbb-GF-08o"/>
+                                    <constraint firstItem="YHq-V7-qlc" firstAttribute="bottom" secondItem="NNg-5S-lLM" secondAttribute="bottom" id="u1K-73-yWb"/>
+                                    <constraint firstItem="du9-3N-ZdB" firstAttribute="bottom" secondItem="YHq-V7-qlc" secondAttribute="bottom" id="wHg-zB-hPM"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Eqc-93-Way" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Pb-3D-gUK"/>
-                            <constraint firstAttribute="trailing" secondItem="Eqc-93-Way" secondAttribute="trailing" id="GtJ-rn-B39"/>
-                            <constraint firstItem="Eqc-93-Way" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pYy-QR-ssc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Eqc-93-Way" secondAttribute="bottom" constant="518" id="tQM-BS-47e"/>
+                            <constraint firstItem="CUw-kj-2WO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="G4A-CV-zC7"/>
+                            <constraint firstItem="CUw-kj-2WO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZJP-nK-ecv"/>
+                            <constraint firstItem="CUw-kj-2WO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="egb-aw-Kx4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUw-kj-2WO" secondAttribute="bottom" constant="465" id="wHB-aZ-jE4"/>
                         </constraints>
                     </view>
                 </viewController>

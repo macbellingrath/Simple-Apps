@@ -13,38 +13,21 @@ import CoreGraphics
 @IBDesignable
 class SimpleSlider: UIView {
     
-    @IBInspectable var color: UIColor = UIColor.blackColor()
     
-    let colors: [UIColor] = [UIColor.blackColor(),UIColor.whiteColor(), UIColor.orangeColor(),UIColor.cyanColor()]
+    @IBInspectable var color: UIColor = UIColor.blueColor()
     
-    var size: CGFloat = 44
+    @IBInspectable var cornerRadius = 20
+  
     
  
     override func drawRect(rect: CGRect) {
-        
-        // Drawing code
-        
-        let origin = self.bounds.origin
-        let height = size
-        let width = size
-        let context = UIGraphicsGetCurrentContext()
-        
-        for color in colors {
-           
-            let colorSquare = CGRect(x: origin.x + (size * CGFloat(color.hashValue)) , y: origin.y, width: height, height: width)
-            print(color)
-            color.set()
-
-            
-            CGContextFillRect(context, colorSquare)
-            
-            
-        }
+       let context = UIGraphicsGetCurrentContext()
+     
+        CGContextFillRect(context, rect)
         
         
-        
-        CGContextAddRect(context, rect)
-        
+        color.set()
+    
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
