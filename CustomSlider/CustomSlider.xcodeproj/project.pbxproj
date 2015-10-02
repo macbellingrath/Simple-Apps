@@ -13,6 +13,8 @@
 		E60B88581BBDD7C70055DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60B88571BBDD7C70055DF7A /* Assets.xcassets */; };
 		E60B885B1BBDD7C70055DF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60B88591BBDD7C70055DF7A /* LaunchScreen.storyboard */; };
 		E60B88651BBDD8870055DF7A /* SimpleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B88641BBDD8870055DF7A /* SimpleSlider.swift */; };
+		E678061E1BBEBCF800A34756 /* TouchSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E678061D1BBEBCF800A34756 /* TouchSlider.swift */; };
+		E68DDD5C1BBEB398001AB479 /* Swatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68DDD5B1BBEB398001AB479 /* Swatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,9 @@
 		E60B885A1BBDD7C70055DF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E60B885C1BBDD7C70055DF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60B88641BBDD8870055DF7A /* SimpleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSlider.swift; sourceTree = "<group>"; };
+		E678061D1BBEBCF800A34756 /* TouchSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchSlider.swift; sourceTree = "<group>"; };
 		E68DDD5A1BBDEBA9001AB479 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		E68DDD5B1BBEB398001AB479 /* Swatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E60B88501BBDD7C70055DF7A /* AppDelegate.swift */,
 				E60B88521BBDD7C70055DF7A /* ViewController.swift */,
 				E60B88641BBDD8870055DF7A /* SimpleSlider.swift */,
+				E678061D1BBEBCF800A34756 /* TouchSlider.swift */,
+				E68DDD5B1BBEB398001AB479 /* Swatch.swift */,
 				E68DDD5A1BBDEBA9001AB479 /* MyPlayground.playground */,
 				E60B88541BBDD7C70055DF7A /* Main.storyboard */,
 				E60B88571BBDD7C70055DF7A /* Assets.xcassets */,
@@ -140,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E60B88651BBDD8870055DF7A /* SimpleSlider.swift in Sources */,
+				E678061E1BBEBCF800A34756 /* TouchSlider.swift in Sources */,
+				E68DDD5C1BBEB398001AB479 /* Swatch.swift in Sources */,
 				E60B88531BBDD7C70055DF7A /* ViewController.swift in Sources */,
 				E60B88511BBDD7C70055DF7A /* AppDelegate.swift in Sources */,
 			);
