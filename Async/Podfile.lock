@@ -1,0 +1,20 @@
+PODS:
+  - Async (1.4.0)
+
+DEPENDENCIES:
+  - Async (from `https://github.com/duemunk/Async.git`, branch `feature/Swift_2.1`)
+
+EXTERNAL SOURCES:
+  Async:
+    :branch: feature/Swift_2.1
+    :git: https://github.com/duemunk/Async.git
+
+CHECKOUT OPTIONS:
+  Async:
+    :commit: 6cc6b9757e16c038bdddeedb20a6cab925ee5831
+    :git: https://github.com/duemunk/Async.git
+
+SPEC CHECKSUMS:
+  Async: 4221a3bed9b180d95dd01fb07256443124514375
+
+COCOAPODS: 0.38.2

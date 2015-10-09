@@ -1,0 +1,8 @@
+
+platform :ios, '9.0'
+use_frameworks!
+
+
+target :Async do
+pod 'Async', :git => 'https://github.com/duemunk/Async.git', :branch => 'feature/Swift_2.1'
+end
