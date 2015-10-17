@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0mZ-Kq-e35">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-eT-dLm">
+                                <rect key="frame" x="45" y="186" width="510" height="227"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="81"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TwK-eT-dLm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3fK-gP-Jxr"/>
+                            <constraint firstItem="TwK-eT-dLm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="4Yu-cT-fDM"/>
+                            <constraint firstItem="TwK-eT-dLm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="122" id="aY0-44-rTx"/>
+                            <constraint firstItem="TwK-eT-dLm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hRW-5L-jqG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2de-OU-Mvh">
+                        <barButtonItem key="leftBarButtonItem" title="Start" id="7Yx-Q7-6Da">
+                            <connections>
+                                <action selector="startTimerPressed:" destination="BYZ-38-t0r" id="foe-2S-bRZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Stop" id="sGU-Ft-7iC">
+                            <connections>
+                                <action selector="stopTimerPressed:" destination="BYZ-38-t0r" id="Qrw-sd-rxf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timeLabel" destination="TwK-eT-dLm" id="KpA-iu-Rcr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="490"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b9H-k0-GJg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0mZ-Kq-e35" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wha-wo-FAT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pew-Ti-7kC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z30-uS-1XF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="1150"/>
+        </scene>
+    </scenes>
+</document>
