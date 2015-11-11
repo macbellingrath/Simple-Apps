@@ -17,6 +17,7 @@
 		E69FCBBB1BF3937C000FD2AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69FCBB91BF3937C000FD2AD /* LaunchScreen.storyboard */; };
 		E69FCBC31BF39390000FD2AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FCBC21BF39390000FD2AD /* Constants.swift */; };
 		E69FCBC61BF399F3000FD2AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FCBC51BF399F3000FD2AD /* Extensions.swift */; };
+		E6ACF0001BF3E672000EEBA1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ACEFFF1BF3E672000EEBA1 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E69FCBBC1BF3937C000FD2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E69FCBC21BF39390000FD2AD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E69FCBC51BF399F3000FD2AD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E6ACEFFF1BF3E672000EEBA1 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				E69FCBC51BF399F3000FD2AD /* Extensions.swift */,
 				E69FCBB01BF3937C000FD2AD /* AppDelegate.swift */,
 				E69FCBC21BF39390000FD2AD /* Constants.swift */,
+				E6ACEFFF1BF3E672000EEBA1 /* Image.swift */,
 				E69FCBB41BF3937C000FD2AD /* Main.storyboard */,
 				E69FCBB71BF3937C000FD2AD /* Assets.xcassets */,
 				E69FCBB91BF3937C000FD2AD /* LaunchScreen.storyboard */,
@@ -354,6 +357,7 @@
 				E69FCBB11BF3937C000FD2AD /* AppDelegate.swift in Sources */,
 				E69FCBC31BF39390000FD2AD /* Constants.swift in Sources */,
 				E69FCBC61BF399F3000FD2AD /* Extensions.swift in Sources */,
+				E6ACF0001BF3E672000EEBA1 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import AmazonS3RequestManager
+import RealmSwift
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -26,37 +27,30 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         
         let date =  Int(NSDate().timeIntervalSince1970)
         
-
-
       
         amazonS3Manager.putObject(imageData, destinationPath: "\(date).png").responseJSON { (response) in
+         
+            print("response: ", response.response)
             
             print("value: ", response.result.value)
+            
             guard let urlResponse  = response.response else { return }
             guard let url = urlResponse.URL?.absoluteString else { return }
             
             
-            self.savedImages.append(url)
+
             
+            let realm = try! Realm()
             
-//            
-//            switch response.response!.statusCode {
-//            
-//            case 200:
-//                let ac = UIAlertController(title: "All Good :) ", message: "Your photo is now in the clouds.", preferredStyle: .Alert)
-//                ac.addAction(UIAlertAction(title: "Okay then.", style: .Default, handler: { (ac) -> Void in
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                }))
-//                self.presentViewController(ac, animated: true, completion: nil)
-//            default:
-//                let ac = UIAlertController(title: "OH NO!", message: "Your photo didn't make it to the clouds...", preferredStyle: .Alert)
-//                ac.addAction(UIAlertAction(title: "Okay then.", style: .Default, handler: { (ac) -> Void in
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                }))
-//                self.presentViewController(ac, animated: true, completion: nil)
-//            }
-//            
-//        }
+            realm.addNotificationBlock({ (notification, realm) -> Void in
+                self.collectionView.reloadData()
+            })
+            
+            realm.beginWrite()
+            realm.create(ImageURL.self, value: ["url": url])
+          
+            try! realm.commitWrite()
+            
         }
 
     
@@ -78,16 +72,18 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         item.contentView.subviews.map{ $0.removeFromSuperview()}
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+    
         
+        let obj = imgURLS[indexPath.item]
         
-        guard let imgNSURL = NSURL(string: savedImages[indexPath.item]) else { print("no"); return item }
+        guard let realmImgURL = NSURL(string: obj.url) else { return  item}
        
-        print(imgNSURL)
+        print("realmurl: ", realmImgURL)
         
         //Background
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
             
-            guard let data = NSData(contentsOfURL: imgNSURL) else { return }
+            guard let data = NSData(contentsOfURL: realmImgURL) else { return }
             
             //Main
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -105,7 +101,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
-        return savedImages.count
+        return imgURLS.count
     }
     
     
