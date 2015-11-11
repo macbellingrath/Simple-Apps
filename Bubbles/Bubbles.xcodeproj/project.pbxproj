@@ -13,6 +13,7 @@
 		E6106FED1BF13D810080FF75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6106FEC1BF13D810080FF75 /* Assets.xcassets */; };
 		E6106FF01BF13D810080FF75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6106FEE1BF13D810080FF75 /* LaunchScreen.storyboard */; };
 		E6A5391E1BF15E800052C4B4 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5391D1BF15E800052C4B4 /* Random.swift */; };
+		E6A539371BF2371E0052C4B4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A539361BF2371E0052C4B4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E6106FEF1BF13D810080FF75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6106FF11BF13D810080FF75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A5391D1BF15E800052C4B4 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		E6A539361BF2371E0052C4B4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				E6106FE51BF13D800080FF75 /* AppDelegate.swift */,
 				E6106FE71BF13D800080FF75 /* BubblesViewController.swift */,
+				E6A539361BF2371E0052C4B4 /* Extensions.swift */,
 				E6A5391D1BF15E800052C4B4 /* Random.swift */,
 				E6106FE91BF13D800080FF75 /* Main.storyboard */,
 				E6106FEC1BF13D810080FF75 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				E6106FE81BF13D800080FF75 /* BubblesViewController.swift in Sources */,
 				E6106FE61BF13D800080FF75 /* AppDelegate.swift in Sources */,
 				E6A5391E1BF15E800052C4B4 /* Random.swift in Sources */,
+				E6A539371BF2371E0052C4B4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (3.1.2)
+  - AmazonS3RequestManager (0.9.1):
+    - Alamofire (~> 3.0)
+    - SWXMLHash (~> 2.0)
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
+  - RealmSwift (0.96.2):
+    - Realm (= 0.96.2)
+  - SWXMLHash (2.0.2)
+
+DEPENDENCIES:
+  - AmazonS3RequestManager (~> 0.8)
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
+  AmazonS3RequestManager: c17ed840dfee8412c22f501516769a2010e39ac6
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
+  RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
+  SWXMLHash: 9e6bd7db2e8275eaf3d2082265623d6e749e169d
+
+COCOAPODS: 0.39.0

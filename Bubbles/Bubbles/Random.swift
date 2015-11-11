@@ -7,55 +7,62 @@
 //
 
 import UIKit
-import AVFoundation
 
-func randomInt(min: Int, max: Int) -> Int {
+
+public func random<T: Comparable >(t: T, r: (min: T, max: T)?) -> T {
+    
+    var _t = t
+   
+    
+    
+    switch _t {
+        
+    case let x where x is Int :
+//        guard let _r = r  where _r.max <  _r.min else { return  _t = _r.min }
+    case let x where x is Float : break
+    case let x where x is Double : break
+    case let x where x is UIColor : break
+    case let x where x is CGFloat : break
+    case let x where x is String : break
+    default: return _t
+
+    }
+    return _t
+}
+
+
+
+
+
+public func randomInt(min: Int, max: Int) -> Int {
     if max < min { return min }
     return Int(arc4random_uniform(UInt32((max - min) + 1))) + min
 }
 
-func randomFloat() -> Float {
+public func randomFloat() -> Float {
     return Float(arc4random()) /  Float(UInt32.max)
 }
 
-func randomFloat(min: Float, max: Float) -> Float {
+ public func randomFloat(min: Float, max: Float) -> Float {
     return (Float(arc4random()) / Float(UInt32.max)) * (max - min) + min
 }
 
-func randomDouble(min: Double, max: Double) -> Double {
+ public func randomDouble(min: Double, max: Double) -> Double {
     return (Double(arc4random()) / Double(UInt32.max)) * (max - min) + min
 }
 
-func randomCGFloat() -> CGFloat {
+ public func randomCGFloat() -> CGFloat {
     return CGFloat(randomFloat())
 }
 
-func randomCGFloat(min: Float, max: Float) -> CGFloat {
+public func randomCGFloat(min: Float, max: Float) -> CGFloat {
     return CGFloat(randomFloat(min, max: max))
 }
 
-func randomColor() -> UIColor {
+public func randomColor() -> UIColor {
     return UIColor(red: randomCGFloat(), green: randomCGFloat(), blue: randomCGFloat(), alpha: 1)
-}
+    }
 
 
-extension AVAudioPlayer {
-    
-    enum AssetIdentifier: String {
-        case Intrigue, Books
-        
-    }
-    
-    
-    
-    
-    
-    convenience init?(assetIdentifier: AssetIdentifier)  {
-        
-        guard let file = NSDataAsset(name: assetIdentifier.rawValue) else { return nil }
-        
-        try? self.init(data: file.data)
-        
-    }
-    
-}
+
+

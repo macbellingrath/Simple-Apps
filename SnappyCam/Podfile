@@ -1,0 +1,18 @@
+platform :ios, '8.0'
+
+
+use_frameworks!
+
+target 'SnappyCam' do
+
+
+pod 'AmazonS3RequestManager', '~> 0.8'
+pod 'RealmSwift'
+
+end
+
+
+target 'SnappyCamTests' do
+
+
+end

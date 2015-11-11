@@ -12,10 +12,10 @@ import AVFoundation
 class BubblesViewController: UIViewController, AVAudioSessionDelegate, AVAudioPlayerDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
 
     var session = AVCaptureSession()
-
-
     
+    var players: [AVAudioPlayer] = []
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -87,6 +87,7 @@ class BubblesViewController: UIViewController, AVAudioSessionDelegate, AVAudioPl
         
         guard let channel = connection.audioChannels.first where channel.averagePowerLevel > -5 else { return print("Not Blowing") }
      
+
         let bubble = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: randomCGFloat(10, max: 100), height: randomCGFloat(10, max: 100))))
         bubble.layer.cornerRadius = bubble.frame.size.height / 2
         bubble.layer.borderColor = randomColor().CGColor
@@ -113,6 +114,15 @@ class BubblesViewController: UIViewController, AVAudioSessionDelegate, AVAudioPl
                 }) { (finished) -> Void in
                     
                     bubble.removeFromSuperview()
+                
+                    //Play Pop Sound
+                    
+                    if let bookData = NSDataAsset(name: "Books") {
+                        if let player = try? AVAudioPlayer(data: bookData.data) {
+                        self.players.append(player)
+                            player.play()
+                        }
+                    }
             }
             
             print("Blowing")
