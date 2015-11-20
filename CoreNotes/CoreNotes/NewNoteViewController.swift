@@ -12,33 +12,22 @@ import CoreData
 
 
 
+
 class NewNoteViewController: UIViewController {
 
     
     @IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var categoryPicker: UIPickerView! {
+        didSet { categoryPicker.delegate = self ; categoryPicker.dataSource = self }
+    }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) { dismissViewControllerAnimated(true, completion: nil) }
    
     
     @IBAction func createButtonPressed(sender: AnyObject) {
         
-        guard let appd = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
-        
-        //Create
-        let newNote = NSEntityDescription.insertNewObjectForEntityForName("Note", inManagedObjectContext: appd.managedObjectContext)
-        newNote.setValue(textView.text, forKey: "text")
-        
-        
-        //get category from picker
-        let category = categories[categoryPicker.selectedRowInComponent(0)]
-        newNote.setValue(category, forKey: "category")
-        
-        //Save
-        appd.saveContext()
-        
-        //Dismiss
+        createNote()
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -46,29 +35,17 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        categoryPicker.dataSource = self
+    
         fetchCategories()
     }
-   var categories : [NSManagedObject] = []
+   var categories : [Category] = []
 }
 
 
-extension NewNoteViewController: UIPickerViewDataSource {
-    
-    func fetchCategories() {
-        
-        //fetch notes for category
-        guard let appd = UIApplication.sharedApplication().delegate as? AppDelegate else {return }
-        
-        let categoryRequest = NSFetchRequest(entityName: "Category")
-        
-        categories = (try? appd.managedObjectContext.executeFetchRequest(categoryRequest) as? [NSManagedObject] ?? []) ?? []
-        
-        categoryPicker.reloadAllComponents()
 
-    }
+extension NewNoteViewController: UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate {
     
+       
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -80,6 +57,30 @@ extension NewNoteViewController: UIPickerViewDataSource {
         
     }
     
-
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.frame.width, height: 30))
+        view.backgroundColor = categories[row].color
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.frame.width, height: pickerView.rowSizeForComponent(component).height
+            ))
+        label.text = categories[row].name
+        label.textColor = UIColor.whiteColor()
+        
+        view.addSubview(label)
+        
+        return view
+    }
     
+    func textViewDidBeginEditing(textView: UITextView) {
+        textView.text = ""
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }

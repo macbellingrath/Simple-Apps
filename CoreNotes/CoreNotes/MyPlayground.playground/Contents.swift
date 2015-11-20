@@ -2,7 +2,7 @@
 
 import UIKit
 
-var str = "Hello, playground"
+
 //    [
 //array of category
 //        [
@@ -34,8 +34,6 @@ let note2 = Note()
 
 var newCategoryDictionary: [[String : Any]] = [["category": cat1, "notes": [note1,note2]]]
 
-let x = newCategoryDictionary.flatMap{ $0 }
 
 
 
-x

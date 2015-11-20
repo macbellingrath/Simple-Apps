@@ -9,135 +9,54 @@
 import UIKit
 import CoreData
 
-
-
-
-
 class NotesTableViewController: UITableViewController {
     
-    // [[ "name": "category:, "notes" : [NSManagedObject]]]
     
     private let headerHeight: CGFloat = 40
     
     
-    var categories: [[String: AnyObject]] = [] {
-        
+    var categories: [CategoryDictionary] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
-//    [
-        //array of category
-//        [
-//            category dictionary
-//            "category" : NSManagedObject,
-// notes array
-//            "notes" : [
-            //note object
-//            NSManagedObject,
-//            NSManagedObject
-//                
-//            ]
-//        ]
-//    ]
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        guard let appd = UIApplication.sharedApplication().delegate as? AppDelegate else {return }
         
-        let categoryRequest = NSFetchRequest(entityName: "Category")
+   fetchCategoriesAndNotes()
         
-        let foundCategories = (try? appd.managedObjectContext.executeFetchRequest(categoryRequest) as? [NSManagedObject] ?? []) ?? []
-        
-        
-        
-        for category in foundCategories {
-            
-            var newCategoryDictionary = [
-                "category" : category,
-                "notes" : []
-            ]
-            
-            //fetch notes for category
-            let noteFetchRequest = NSFetchRequest(entityName: "Note")
-            
-            noteFetchRequest.predicate = NSPredicate(format: "category == %@", category)
-            
-            let foundNotes = (try? appd.managedObjectContext.executeFetchRequest(noteFetchRequest) as? [NSManagedObject] ?? []) ?? []
-            newCategoryDictionary["notes"] = foundNotes
-            
-            categories.append(newCategoryDictionary)
+    
 
-        }
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //fetch notes for category
+        fetchCategoriesAndNotes()
         
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "sendBanana")
         
-        guard let appd = UIApplication.sharedApplication().delegate as? AppDelegate else {return }
-        
-        let categoryRequest = NSFetchRequest(entityName: "Category")
-        
-        let foundCategories = (try? appd.managedObjectContext.executeFetchRequest(categoryRequest) as? [NSManagedObject] ?? []) ?? []
-        
-    
-        
-        for category in foundCategories {
             
-            var newCategoryDictionary = [
-                "category" : category,
-                "notes" : []
-            ]
-            
-            //fetch notes for category
-            let noteFetchRequest = NSFetchRequest(entityName: "Note")
-            
-            noteFetchRequest.predicate = NSPredicate(format: "category == %@", category)
-            
-            let foundNotes = (try? appd.managedObjectContext.executeFetchRequest(noteFetchRequest) as? [NSManagedObject] ?? []) ?? []
-            newCategoryDictionary["notes"] = foundNotes
-            
-            categories.append(newCategoryDictionary)
-        }
-        
     }
     
+  
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return categories.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        return 1
-
-        
-        let category = categories[section]
-        let notes = category["notes"] as? [AnyObject]
-        
-        return notes?.count ?? 0
+        return categories[section].notes.count ?? 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-       //To-Do
-        cell.textLabel?.text = "Note"
-        
-//                    as! NotesTableViewCell
-        
-//        cell.configure(withDatasource: NoteViewModel(), andDelegate: NoteViewModel())
-        
-        //get current note and set content
-        
-
-        // Configure the cell...
+        cell.textLabel?.text = categories[indexPath.section].notes[indexPath.row].text
 
         return cell
         
@@ -145,27 +64,31 @@ class NotesTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+      
         if editingStyle == .Delete {
+       
+            //Note
+            let note = categories[indexPath.section].notes[indexPath.row]
             
             // Remove note from CoreData
+            deleteNote(note)
             
+            //remove note from dictionary
+            categories[indexPath.section].notes.removeAtIndex(indexPath.row)
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let category = categories[section]
-        let managedObject = category["category"] as? NSManagedObject
-        let name = managedObject?.valueForKey("name") as? String
+        
         
         let categoryView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: headerHeight))
-        categoryView.backgroundColor = UIColor.darkGrayColor()
-        
+        categoryView.backgroundColor = categories[section].category.color ?? UIColor.capeCodColor()
         let label = UILabel(frame: categoryView.frame)
     
-        label.text = name
+        label.text = categories[section].category.name
+
         
         
         label.textAlignment = .Center
@@ -183,5 +106,10 @@ class NotesTableViewController: UITableViewController {
         return 40
         
     }
+    
 
 }
+
+
+
+

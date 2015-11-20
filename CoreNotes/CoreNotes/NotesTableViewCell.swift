@@ -36,6 +36,7 @@ struct NoteViewModel: NoteCellProtocol {
 
 
 
+
 class NotesTableViewCell: UITableViewCell {
 
     private var delegate: NoteCellDelegate?

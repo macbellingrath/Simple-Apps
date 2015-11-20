@@ -9,15 +9,19 @@
 import UIKit
 import CoreData
 
-class NewCategoryViewController: UIViewController, UITextFieldDelegate {
+class NewCategoryViewController: UIViewController {
+    
+    var colors = [UIColor.magentaColor(), UIColor.mandyColor(), UIColor.capeCodColor(), UIColor.mantisColor()]
 
-    @IBOutlet weak var categoryName: UITextField!
+    @IBOutlet weak var categoryName: UITextField! {
+        didSet { categoryName.delegate = self }
+    }
     
     @IBOutlet weak var ColorPicker: UIPickerView!
     
     @IBOutlet weak var datePicker: UIDatePicker!
 
-    
+   
 
     @IBAction func cancel(sender: AnyObject) {
         
@@ -27,31 +31,22 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createButtonPressed(sender: AnyObject) {
         
-      guard let appD = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
-        
-        let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: appD.managedObjectContext)
-        
-        newCategory.setValue(categoryName.text, forKey: "name")
-
-        newCategory.setValue(datePicker.date, forKey: "date") 
-        
-        appD.saveContext()
-        
-        dismissViewControllerAnimated(true, completion: nil)
+      createCategory()
+      dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-        
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    
+   
 }
+
+
+
+
+

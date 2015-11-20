@@ -18,6 +18,20 @@
 		E64847021BFA61540050C664 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64847011BFA61540050C664 /* NewNoteViewController.swift */; };
 		E64847041BFA615D0050C664 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64847031BFA615D0050C664 /* NewCategoryViewController.swift */; };
 		E6CDF1601BFB6B0C0079024B /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CDF15F1BFB6B0C0079024B /* NotesTableViewCell.swift */; };
+		E6CDF1631BFB82890079024B /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CDF1621BFB82890079024B /* CoreData.swift */; };
+		E6F5E7B11BFCBF8A000CEFB9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6F5E7AF1BFCBF8A000CEFB9 /* Interface.storyboard */; };
+		E6F5E7B31BFCBF8A000CEFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F5E7B21BFCBF8A000CEFB9 /* Assets.xcassets */; };
+		E6F5E7BA1BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E6F5E7B91BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E6F5E7C11BFCBF8A000CEFB9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5E7C01BFCBF8A000CEFB9 /* InterfaceController.swift */; };
+		E6F5E7C31BFCBF8A000CEFB9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5E7C21BFCBF8A000CEFB9 /* ExtensionDelegate.swift */; };
+		E6F5E7C51BFCBF8A000CEFB9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5E7C41BFCBF8A000CEFB9 /* NotificationController.swift */; };
+		E6F5E7C71BFCBF8A000CEFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F5E7C61BFCBF8A000CEFB9 /* Assets.xcassets */; };
+		E6F5E7CB1BFCBF8A000CEFB9 /* CoreNotesWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E6F5E7AD1BFCBF8A000CEFB9 /* CoreNotesWatch.app */; };
+		E6F5E7D51BFCBFD5000CEFB9 /* WatchStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5E7D41BFCBFD5000CEFB9 /* WatchStuff.swift */; };
+		E6F5E7D91BFCC226000CEFB9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F5E7D71BFCC226000CEFB9 /* Fabric.framework */; };
+		E6F5E7DA1BFCC226000CEFB9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F5E7D81BFCC226000CEFB9 /* Crashlytics.framework */; };
+		E6F5E7DD1BFCCCAB000CEFB9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5E7DC1BFCCCAB000CEFB9 /* Constants.swift */; };
+		FC7191BB6191BE7C04F39A39 /* Pods_CoreNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0060570703076DB90F144D /* Pods_CoreNotesTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +49,51 @@
 			remoteGlobalIDString = E648468A1BFA4ACE0050C664;
 			remoteInfo = CoreNotes;
 		};
+		E6F5E7BB1BFCBF8A000CEFB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E64846831BFA4ACE0050C664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6F5E7B81BFCBF8A000CEFB9;
+			remoteInfo = "CoreNotesWatch Extension";
+		};
+		E6F5E7C91BFCBF8A000CEFB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E64846831BFA4ACE0050C664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6F5E7AC1BFCBF8A000CEFB9;
+			remoteInfo = CoreNotesWatch;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E6F5E7D11BFCBF8A000CEFB9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E6F5E7BA1BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F5E7D31BFCBF8A000CEFB9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E6F5E7CB1BFCBF8A000CEFB9 /* CoreNotesWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4A0060570703076DB90F144D /* Pods_CoreNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F943A6766A3B0B769A97463 /* Pods-CoreNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreNotesTests/Pods-CoreNotesTests.release.xcconfig"; sourceTree = "<group>"; };
+		A57B7FB6C14FADBA90269F86 /* Pods-CoreNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreNotesTests/Pods-CoreNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E648468B1BFA4ACE0050C664 /* CoreNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E648468E1BFA4ACE0050C664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64846931BFA4ACE0050C664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +112,22 @@
 		E64847031BFA615D0050C664 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		E6CDF15F1BFB6B0C0079024B /* NotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		E6CDF1611BFB75910079024B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		E6CDF1621BFB82890079024B /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		E6F5E7AD1BFCBF8A000CEFB9 /* CoreNotesWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreNotesWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F5E7B01BFCBF8A000CEFB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E6F5E7B21BFCBF8A000CEFB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6F5E7B41BFCBF8A000CEFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6F5E7B91BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CoreNotesWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F5E7BF1BFCBF8A000CEFB9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E6F5E7C01BFCBF8A000CEFB9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E6F5E7C21BFCBF8A000CEFB9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E6F5E7C41BFCBF8A000CEFB9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E6F5E7C61BFCBF8A000CEFB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6F5E7C81BFCBF8A000CEFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6F5E7D41BFCBFD5000CEFB9 /* WatchStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchStuff.swift; sourceTree = "<group>"; };
+		E6F5E7D71BFCC226000CEFB9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		E6F5E7D81BFCC226000CEFB9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E6F5E7DC1BFCCCAB000CEFB9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F5E7DA1BFCC226000CEFB9 /* Crashlytics.framework in Frameworks */,
+				E6F5E7D91BFCC226000CEFB9 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7191BB6191BE7C04F39A39 /* Pods_CoreNotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,16 +155,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6F5E7B61BFCBF8A000CEFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62792838DA1C8C0ED194BFF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A57B7FB6C14FADBA90269F86 /* Pods-CoreNotesTests.debug.xcconfig */,
+				9F943A6766A3B0B769A97463 /* Pods-CoreNotesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		89BF7389409693880EC31144 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A0060570703076DB90F144D /* Pods_CoreNotesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E64846821BFA4ACE0050C664 = {
 			isa = PBXGroup;
 			children = (
 				E648468D1BFA4ACE0050C664 /* CoreNotes */,
 				E64846A51BFA4ACE0050C664 /* CoreNotesTests */,
 				E64846B01BFA4ACE0050C664 /* CoreNotesUITests */,
+				E6F5E7AE1BFCBF8A000CEFB9 /* CoreNotesWatch */,
+				E6F5E7BD1BFCBF8A000CEFB9 /* CoreNotesWatch Extension */,
 				E648468C1BFA4ACE0050C664 /* Products */,
+				62792838DA1C8C0ED194BFF3 /* Pods */,
+				89BF7389409693880EC31144 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +202,8 @@
 				E648468B1BFA4ACE0050C664 /* CoreNotes.app */,
 				E64846A21BFA4ACE0050C664 /* CoreNotesTests.xctest */,
 				E64846AD1BFA4ACE0050C664 /* CoreNotesUITests.xctest */,
+				E6F5E7AD1BFCBF8A000CEFB9 /* CoreNotesWatch.app */,
+				E6F5E7B91BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,11 +211,12 @@
 		E648468D1BFA4ACE0050C664 /* CoreNotes */ = {
 			isa = PBXGroup;
 			children = (
+				E6F5E7DB1BFCC2AA000CEFB9 /* Frameworks */,
+				E6CDF1621BFB82890079024B /* CoreData.swift */,
+				E6F5E7D41BFCBFD5000CEFB9 /* WatchStuff.swift */,
 				E64846921BFA4ACE0050C664 /* Main.storyboard */,
-				E64846FF1BFA61420050C664 /* NotesTableViewController.swift */,
-				E64847011BFA61540050C664 /* NewNoteViewController.swift */,
-				E6CDF15F1BFB6B0C0079024B /* NotesTableViewCell.swift */,
-				E64847031BFA615D0050C664 /* NewCategoryViewController.swift */,
+				E6F5E7DC1BFCCCAB000CEFB9 /* Constants.swift */,
+				E6707FEF1BFBC38700A2884A /* Note Flow */,
 				E64846FE1BFA600A0050C664 /* System */,
 			);
 			path = CoreNotes;
@@ -147,6 +253,58 @@
 			name = System;
 			sourceTree = "<group>";
 		};
+		E6707FEF1BFBC38700A2884A /* Note Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E64846FF1BFA61420050C664 /* NotesTableViewController.swift */,
+				E64847011BFA61540050C664 /* NewNoteViewController.swift */,
+				E6CDF15F1BFB6B0C0079024B /* NotesTableViewCell.swift */,
+				E64847031BFA615D0050C664 /* NewCategoryViewController.swift */,
+			);
+			name = "Note Flow";
+			sourceTree = "<group>";
+		};
+		E6F5E7AE1BFCBF8A000CEFB9 /* CoreNotesWatch */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5E7AF1BFCBF8A000CEFB9 /* Interface.storyboard */,
+				E6F5E7B21BFCBF8A000CEFB9 /* Assets.xcassets */,
+				E6F5E7B41BFCBF8A000CEFB9 /* Info.plist */,
+			);
+			path = CoreNotesWatch;
+			sourceTree = "<group>";
+		};
+		E6F5E7BD1BFCBF8A000CEFB9 /* CoreNotesWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5E7C01BFCBF8A000CEFB9 /* InterfaceController.swift */,
+				E6F5E7C21BFCBF8A000CEFB9 /* ExtensionDelegate.swift */,
+				E6F5E7C41BFCBF8A000CEFB9 /* NotificationController.swift */,
+				E6F5E7C61BFCBF8A000CEFB9 /* Assets.xcassets */,
+				E6F5E7C81BFCBF8A000CEFB9 /* Info.plist */,
+				E6F5E7BE1BFCBF8A000CEFB9 /* Supporting Files */,
+			);
+			path = "CoreNotesWatch Extension";
+			sourceTree = "<group>";
+		};
+		E6F5E7BE1BFCBF8A000CEFB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5E7BF1BFCBF8A000CEFB9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6F5E7DB1BFCC2AA000CEFB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6F5E7D71BFCC226000CEFB9 /* Fabric.framework */,
+				E6F5E7D81BFCC226000CEFB9 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,10 +315,13 @@
 				E64846871BFA4ACE0050C664 /* Sources */,
 				E64846881BFA4ACE0050C664 /* Frameworks */,
 				E64846891BFA4ACE0050C664 /* Resources */,
+				E6F5E7D31BFCBF8A000CEFB9 /* Embed Watch Content */,
+				E6F5E7D61BFCC20D000CEFB9 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E6F5E7CA1BFCBF8A000CEFB9 /* PBXTargetDependency */,
 			);
 			name = CoreNotes;
 			productName = CoreNotes;
@@ -171,9 +332,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E64846B91BFA4ACE0050C664 /* Build configuration list for PBXNativeTarget "CoreNotesTests" */;
 			buildPhases = (
+				90DE307BEA0A362FDFBA7C58 /* Check Pods Manifest.lock */,
 				E648469E1BFA4ACE0050C664 /* Sources */,
 				E648469F1BFA4ACE0050C664 /* Frameworks */,
 				E64846A01BFA4ACE0050C664 /* Resources */,
+				A35DAB0687FFF05169EF0F50 /* Embed Pods Frameworks */,
+				076315890C506247875F7D93 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +367,40 @@
 			productReference = E64846AD1BFA4ACE0050C664 /* CoreNotesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E6F5E7AC1BFCBF8A000CEFB9 /* CoreNotesWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F5E7D21BFCBF8A000CEFB9 /* Build configuration list for PBXNativeTarget "CoreNotesWatch" */;
+			buildPhases = (
+				E6F5E7AB1BFCBF8A000CEFB9 /* Resources */,
+				E6F5E7D11BFCBF8A000CEFB9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6F5E7BC1BFCBF8A000CEFB9 /* PBXTargetDependency */,
+			);
+			name = CoreNotesWatch;
+			productName = CoreNotesWatch;
+			productReference = E6F5E7AD1BFCBF8A000CEFB9 /* CoreNotesWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E6F5E7B81BFCBF8A000CEFB9 /* CoreNotesWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F5E7D01BFCBF8A000CEFB9 /* Build configuration list for PBXNativeTarget "CoreNotesWatch Extension" */;
+			buildPhases = (
+				E6F5E7B51BFCBF8A000CEFB9 /* Sources */,
+				E6F5E7B61BFCBF8A000CEFB9 /* Frameworks */,
+				E6F5E7B71BFCBF8A000CEFB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreNotesWatch Extension";
+			productName = "CoreNotesWatch Extension";
+			productReference = E6F5E7B91BFCBF8A000CEFB9 /* CoreNotesWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +422,12 @@
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = E648468A1BFA4ACE0050C664;
 					};
+					E6F5E7AC1BFCBF8A000CEFB9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					E6F5E7B81BFCBF8A000CEFB9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = E64846861BFA4ACE0050C664 /* Build configuration list for PBXProject "CoreNotes" */;
@@ -242,6 +446,8 @@
 				E648468A1BFA4ACE0050C664 /* CoreNotes */,
 				E64846A11BFA4ACE0050C664 /* CoreNotesTests */,
 				E64846AC1BFA4ACE0050C664 /* CoreNotesUITests */,
+				E6F5E7AC1BFCBF8A000CEFB9 /* CoreNotesWatch */,
+				E6F5E7B81BFCBF8A000CEFB9 /* CoreNotesWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -271,7 +477,85 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6F5E7AB1BFCBF8A000CEFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F5E7B31BFCBF8A000CEFB9 /* Assets.xcassets in Resources */,
+				E6F5E7B11BFCBF8A000CEFB9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F5E7B71BFCBF8A000CEFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F5E7C71BFCBF8A000CEFB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		076315890C506247875F7D93 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreNotesTests/Pods-CoreNotesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90DE307BEA0A362FDFBA7C58 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A35DAB0687FFF05169EF0F50 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreNotesTests/Pods-CoreNotesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6F5E7D61BFCC20D000CEFB9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2b2b4be316e3754dc4b250567b7f2886aa28fe94 7d8afd67a9899a6f8e1b3f15c52bacb888cc9f05157f54a1979de6666c8619db";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E64846871BFA4ACE0050C664 /* Sources */ = {
@@ -280,10 +564,13 @@
 			files = (
 				E64846971BFA4ACE0050C664 /* CoreNotes.xcdatamodeld in Sources */,
 				E64847021BFA61540050C664 /* NewNoteViewController.swift in Sources */,
+				E6F5E7D51BFCBFD5000CEFB9 /* WatchStuff.swift in Sources */,
 				E64847041BFA615D0050C664 /* NewCategoryViewController.swift in Sources */,
 				E648468F1BFA4ACE0050C664 /* AppDelegate.swift in Sources */,
+				E6CDF1631BFB82890079024B /* CoreData.swift in Sources */,
 				E64847001BFA61420050C664 /* NotesTableViewController.swift in Sources */,
 				E6CDF1601BFB6B0C0079024B /* NotesTableViewCell.swift in Sources */,
+				E6F5E7DD1BFCCCAB000CEFB9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +590,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6F5E7B51BFCBF8A000CEFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F5E7C51BFCBF8A000CEFB9 /* NotificationController.swift in Sources */,
+				E6F5E7C31BFCBF8A000CEFB9 /* ExtensionDelegate.swift in Sources */,
+				E6F5E7C11BFCBF8A000CEFB9 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -315,6 +612,16 @@
 			isa = PBXTargetDependency;
 			target = E648468A1BFA4ACE0050C664 /* CoreNotes */;
 			targetProxy = E64846AE1BFA4ACE0050C664 /* PBXContainerItemProxy */;
+		};
+		E6F5E7BC1BFCBF8A000CEFB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6F5E7B81BFCBF8A000CEFB9 /* CoreNotesWatch Extension */;
+			targetProxy = E6F5E7BB1BFCBF8A000CEFB9 /* PBXContainerItemProxy */;
+		};
+		E6F5E7CA1BFCBF8A000CEFB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6F5E7AC1BFCBF8A000CEFB9 /* CoreNotesWatch */;
+			targetProxy = E6F5E7C91BFCBF8A000CEFB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -333,6 +640,14 @@
 				E648469B1BFA4ACE0050C664 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E6F5E7AF1BFCBF8A000CEFB9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6F5E7B01BFCBF8A000CEFB9 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -423,7 +738,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CoreNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,7 +754,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CoreNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +768,7 @@
 		};
 		E64846BA1BFA4ACE0050C664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A57B7FB6C14FADBA90269F86 /* Pods-CoreNotesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CoreNotesTests/Info.plist;
@@ -455,6 +781,7 @@
 		};
 		E64846BB1BFA4ACE0050C664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F943A6766A3B0B769A97463 /* Pods-CoreNotesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CoreNotesTests/Info.plist;
@@ -486,6 +813,66 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = CoreNotes;
 				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		E6F5E7CC1BFCBF8A000CEFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = CoreNotesWatch_Extension;
+				INFOPLIST_FILE = CoreNotesWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E6F5E7CD1BFCBF8A000CEFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = CoreNotesWatch_Extension;
+				INFOPLIST_FILE = CoreNotesWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		E6F5E7CE1BFCBF8A000CEFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "CoreNotesWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E6F5E7CF1BFCBF8A000CEFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "CoreNotesWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.macbellingrath.CoreNotes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -524,6 +911,24 @@
 			buildConfigurations = (
 				E64846BD1BFA4ACE0050C664 /* Debug */,
 				E64846BE1BFA4ACE0050C664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F5E7D01BFCBF8A000CEFB9 /* Build configuration list for PBXNativeTarget "CoreNotesWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F5E7CE1BFCBF8A000CEFB9 /* Debug */,
+				E6F5E7CF1BFCBF8A000CEFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F5E7D21BFCBF8A000CEFB9 /* Build configuration list for PBXNativeTarget "CoreNotesWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F5E7CC1BFCBF8A000CEFB9 /* Debug */,
+				E6F5E7CD1BFCBF8A000CEFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

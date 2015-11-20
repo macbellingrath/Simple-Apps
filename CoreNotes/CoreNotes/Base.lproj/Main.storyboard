@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tJQ-I7-rDf">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -51,6 +50,10 @@
                                     </textField>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwo-GN-09C">
                                         <rect key="frame" x="0.0" y="48" width="343" height="247"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="d5Y-Tw-UDd" id="4Rh-o4-qJX"/>
+                                            <outlet property="delegate" destination="d5Y-Tw-UDd" id="i2s-xg-kpw"/>
+                                        </connections>
                                     </pickerView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ms6-Mt-32Z">
                                         <rect key="frame" x="0.0" y="307" width="343" height="247"/>
@@ -114,15 +117,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EAh-Yd-HRV">
                                 <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-nZ-7S6">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" text="Enter a note..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-nZ-7S6">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="340"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="IC3-lV-9KT"/>
+                                            <constraint firstAttribute="height" constant="200" id="KfQ-XZ-anK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="alert"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="IC3-lV-9KT"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="tnj-VP-vck" id="LUC-Xx-fOa"/>
+                                        </connections>
                                     </textView>
                                     <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAo-Gg-5VT">
-                                        <rect key="frame" x="0.0" y="350" width="343" height="217"/>
+                                        <rect key="frame" x="0.0" y="350" width="343" height="218"/>
                                         <connections>
                                             <outlet property="dataSource" destination="tnj-VP-vck" id="HKo-kH-HDo"/>
                                         </connections>
@@ -132,14 +146,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-uy-yEf">
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="cancelButtonPressed:" destination="tnj-VP-vck" eventType="touchUpInside" id="TZg-4m-qkv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPr-kU-sbV">
                                                 <rect key="frame" x="177" y="0.0" width="167" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Save"/>
                                                 <connections>
                                                     <action selector="createButtonPressed:" destination="tnj-VP-vck" eventType="touchUpInside" id="Gzr-XT-MbZ"/>
                                                 </connections>
@@ -176,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="ERR-5s-MTd" customClass="NotesTableViewCell" customModule="CoreNotes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="ERR-5s-MTd">
                                 <rect key="frame" x="0.0" y="92" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ERR-5s-MTd" id="2CE-X8-OoV">
