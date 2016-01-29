@@ -118,7 +118,7 @@
                                 <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" text="Enter a note..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-nZ-7S6">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="340"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="341"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="IC3-lV-9KT"/>
@@ -136,7 +136,7 @@
                                         </connections>
                                     </textView>
                                     <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAo-Gg-5VT">
-                                        <rect key="frame" x="0.0" y="350" width="343" height="218"/>
+                                        <rect key="frame" x="0.0" y="351" width="343" height="217"/>
                                         <connections>
                                             <outlet property="dataSource" destination="tnj-VP-vck" id="HKo-kH-HDo"/>
                                         </connections>

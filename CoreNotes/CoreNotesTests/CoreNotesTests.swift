@@ -11,19 +11,28 @@ import Quick
 
 @testable import CoreNotes
 
+struct Banana {
+    var peeled = false
+    
+    func peel() {
+        self.peeled = true
+    }
+}
+
+
 class CoreNotesTests: QuickSpec {
     
     override func spec() {
         
-        describe("A category") {
+        describe("A Banana") {
             
-            it("Is accessible after it is created."){
+            it("Is is tasty if it is peeled."){
                 
-                let newCategory = Category.category()
-                newCategory?.name = "Dolphin"
-                newCategory?.color = UIColor.capeCodColor()
+                let banana = Banana()
                 
-                expect(newCategory?.valueForKey("name") as? String).to(equal("Dolphin"))
+                banana.peel()
+                expect(banana.peeled).to(beTrue())
+               
             }
         }
     }

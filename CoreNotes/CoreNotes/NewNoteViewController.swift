@@ -50,9 +50,7 @@ extension NewNoteViewController: UIPickerViewDataSource, UIPickerViewDelegate, U
         return 1
     }
 
-    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return categories.count
         
     }
