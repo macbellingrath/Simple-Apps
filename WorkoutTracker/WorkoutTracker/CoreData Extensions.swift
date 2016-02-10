@@ -11,7 +11,7 @@ import Foundation
 extension WorkoutsTableViewController {
     
     func startCoreData() {
-        let modelURL = NSBundle.mainBundle().URLForResource("WorkoutTracker", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("Workout", withExtension: "momd")!
         let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
         
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
@@ -28,6 +28,32 @@ extension WorkoutsTableViewController {
             return
         }
         
+    }
+    
+    func loadSavedData() {
+        let fetch = NSFetchRequest(entityName: Workout.entityName)
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetch.sortDescriptors = [sort]
+        
+        do {
+            if let workouts = try managedObjectContext.executeFetchRequest(fetch) as? [Workout] {
+               self.workouts = workouts
+                
+            }
+                
+            } catch {
+                print(error)
+                
+            }
+    }
+    
+    func saveContext() {
+        guard managedObjectContext.hasChanges else { return }
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("an error occured saving the context")
+        }
     }
     private func getDocumentsDirectory() -> NSURL {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)

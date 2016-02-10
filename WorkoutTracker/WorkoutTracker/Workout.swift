@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import CoreData
 
-struct Workout: RecordType, CloudKitQueryable {
+class Workout: NSManagedObject, RecordType, CloudKitQueryable {
     static var recordTypeIdentifier: String {
         return "Workout"
     }
     
     static let CKRECORDID = "Workout"
-    var recordTitle: String
+    static let entityName = "Workout"
+    var recordTitle = ""
+    
+ 
+    static func entityDescription(moc: NSManagedObjectContext) -> NSEntityDescription {
+       return NSEntityDescription.entityForName("Workout", inManagedObjectContext: moc)!
+    }
 }

@@ -26,6 +26,7 @@
 		E6406F561BDA68720051B755 /* WorkoutTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6406F551BDA68720051B755 /* WorkoutTrackerUITests.swift */; };
 		E69579FF1C6B74F000588421 /* Workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E69579FD1C6B74F000588421 /* Workout.xcdatamodeld */; };
 		E6957A021C6B752D00588421 /* CoreData Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6957A011C6B752D00588421 /* CoreData Extensions.swift */; };
+		E6957A041C6B79DF00588421 /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6957A031C6B79DF00588421 /* Workout+CoreDataProperties.swift */; };
 		E6FCFC631C5E435B00F1F568 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCFC621C5E435A00F1F568 /* MyView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		E6406F571BDA68720051B755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E69579FE1C6B74F000588421 /* Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout.xcdatamodel; sourceTree = "<group>"; };
 		E6957A011C6B752D00588421 /* CoreData Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData Extensions.swift"; sourceTree = "<group>"; };
+		E6957A031C6B79DF00588421 /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E6FCFC621C5E435A00F1F568 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +144,6 @@
 				E6406F331BDA68720051B755 /* AppDelegate.swift */,
 				E6406F351BDA68720051B755 /* WorkoutsTableViewController.swift */,
 				E62331EE1C5BC66A00F14C75 /* WorkoutTableViewCell.swift */,
-				E62331E61C5BBE9E00F14C75 /* Workout.swift */,
 				E62331EC1C5BC3ED00F14C75 /* TableViewCellExtensions.swift */,
 				E62331E81C5BBF7900F14C75 /* CloudKitQueryable.swift */,
 				E62331EA1C5BBFD900F14C75 /* RecordType.swift */,
@@ -178,6 +179,8 @@
 		E6957A001C6B751F00588421 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				E62331E61C5BBE9E00F14C75 /* Workout.swift */,
+				E6957A031C6B79DF00588421 /* Workout+CoreDataProperties.swift */,
 				E69579FD1C6B74F000588421 /* Workout.xcdatamodeld */,
 				E6957A011C6B752D00588421 /* CoreData Extensions.swift */,
 			);
@@ -404,6 +407,7 @@
 				E6406F341BDA68720051B755 /* AppDelegate.swift in Sources */,
 				E6FCFC631C5E435B00F1F568 /* MyView.swift in Sources */,
 				E69579FF1C6B74F000588421 /* Workout.xcdatamodeld in Sources */,
+				E6957A041C6B79DF00588421 /* Workout+CoreDataProperties.swift in Sources */,
 				E62331ED1C5BC3ED00F14C75 /* TableViewCellExtensions.swift in Sources */,
 				E62331EF1C5BC66A00F14C75 /* WorkoutTableViewCell.swift in Sources */,
 				E62331E31C5BB1B500F14C75 /* AlertControllerDisplayable.swift in Sources */,

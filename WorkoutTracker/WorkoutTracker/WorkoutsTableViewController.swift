@@ -26,24 +26,32 @@ class WorkoutsTableViewController: UITableViewController, AlertControllerDisplay
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationBecameInactive:", name: UIApplicationWillResignActiveNotification, object: nil)
 
-       
-        publicCloudDatabase.performQuery(Workout.defaultQuery, inZoneWithID: nil) { records, error in
+       startCoreData()
+        
+       loadSavedData()
+        
+        publicCloudDatabase.performQuery(Workout.defaultQuery, inZoneWithID: nil) {  records, error in
             guard error == nil else { return }
             guard let records = records else { return }
            
-            self.workouts = records.flatMap({
-                guard let name = $0.valueForKey("name") as? String else { return nil }
-                return Workout(recordTitle: name)
-            })
+            for r in records {
+                guard let name = r.valueForKey("name") as? String else { return }
+                if let workout = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: self.managedObjectContext) as? Workout {
+                    workout.name = name
+                }
+                
+            }
+            self.saveContext()
+            self.loadSavedData()
         }
+        
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         checkAccountStatus()
-        
-        publicCloudDatabase
+    
         
     }
     
