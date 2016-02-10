@@ -9,7 +9,8 @@
 import UIKit
 
 class WorkoutTableViewCell: UITableViewCell, CellRepresentable {
-
+    
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

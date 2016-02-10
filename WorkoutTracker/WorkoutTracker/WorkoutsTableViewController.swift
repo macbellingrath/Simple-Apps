@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import CoreData
 
 
 class WorkoutsTableViewController: UITableViewController, AlertControllerDisplayable, CloudKitAccessible {
@@ -17,6 +18,7 @@ class WorkoutsTableViewController: UITableViewController, AlertControllerDisplay
             tableView.reloadData()
         }
     }
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,8 @@ class WorkoutsTableViewController: UITableViewController, AlertControllerDisplay
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         checkAccountStatus()
+        
+        publicCloudDatabase
         
     }
     

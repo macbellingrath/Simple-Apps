@@ -13,3 +13,4 @@ protocol RecordType {
     var recordTitle: String { get set }
 }
 
+

@@ -69,35 +69,6 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Workouts-->
-        <scene sceneID="hCa-yC-NLg">
-            <objects>
-                <tableViewController id="jJ1-pE-zsJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Xg-NM-XKK">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultCell" rowHeight="75" id="hND-nh-dSO">
-                                <rect key="frame" x="0.0" y="28" width="600" height="75"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hND-nh-dSO" id="lNb-31-nyL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jJ1-pE-zsJ" id="mHY-86-eaA"/>
-                            <outlet property="delegate" destination="jJ1-pE-zsJ" id="zPb-pK-xMr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Workouts" id="aRJ-bK-Bhi"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gIr-s1-bLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1570" y="404"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="nKa-Km-2J4">
             <objects>
@@ -108,12 +79,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jJ1-pE-zsJ" kind="relationship" relationship="rootViewController" id="eqk-Jc-8NZ"/>
+                        <segue destination="1Pj-gx-uNX" kind="relationship" relationship="rootViewController" id="cyC-ix-6Oz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brC-xF-EdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="404"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ZqE-pQ-bN3">
+            <objects>
+                <viewController id="1Pj-gx-uNX" customClass="SecondViewController" customModule="WorkoutTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ugz-5a-mWE"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVK-ET-Ua3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VPJ-Oc-a4O">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-AH-3d3" customClass="MaterialButton">
+                                <rect key="frame" x="277" y="397" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="FgU-iJ-8pa"/>
+                                    <constraint firstAttribute="height" constant="30" id="iJz-Db-8HS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aVK-ET-Ua3" firstAttribute="top" secondItem="4ui-AH-3d3" secondAttribute="bottom" constant="60" id="frO-90-Qdo"/>
+                            <constraint firstItem="4ui-AH-3d3" firstAttribute="centerX" secondItem="VPJ-Oc-a4O" secondAttribute="centerX" id="nwr-5g-4bE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="92V-Um-fSD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPM-Bd-cr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288" y="322"/>
         </scene>
     </scenes>
     <resources>
