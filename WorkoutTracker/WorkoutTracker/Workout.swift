@@ -16,7 +16,10 @@ class Workout: NSManagedObject, RecordType, CloudKitQueryable {
     
     static let CKRECORDID = "Workout"
     static let entityName = "Workout"
-    var recordTitle = ""
+    var recordTitle : String {
+        get { return self.name }
+        set { name = newValue }
+    }
     
  
     static func entityDescription(moc: NSManagedObjectContext) -> NSEntityDescription {

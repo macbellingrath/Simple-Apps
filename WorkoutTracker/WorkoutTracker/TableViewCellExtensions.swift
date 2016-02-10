@@ -14,6 +14,6 @@ enum TableViewCellIdentifierType: String {
 
 
 protocol CellRepresentable {
-    func configure(with: RecordType)
+    func configure(record: RecordType)
 }
 

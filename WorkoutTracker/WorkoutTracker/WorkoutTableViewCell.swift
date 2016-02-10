@@ -22,8 +22,8 @@ class WorkoutTableViewCell: UITableViewCell, CellRepresentable {
 
         // Configure the view for the selected state
     }
-    func configure(with: RecordType) {
-        self.textLabel?.text = with.recordTitle
+    func configure(record: RecordType) {
+        self.textLabel?.text = record.recordTitle
     }
 
 }

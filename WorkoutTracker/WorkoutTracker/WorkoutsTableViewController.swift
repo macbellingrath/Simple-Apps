@@ -15,7 +15,7 @@ class WorkoutsTableViewController: UITableViewController, AlertControllerDisplay
     
     var workouts: [Workout] = [] {
         didSet {
-            tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue()) { self.tableView.reloadData() }
         }
     }
     var managedObjectContext: NSManagedObjectContext!
