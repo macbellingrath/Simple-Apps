@@ -23,6 +23,7 @@ extension WorkoutsTableViewController {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
             managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
             managedObjectContext.persistentStoreCoordinator = coordinator
+            managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         } catch {
             print(error)
             return
